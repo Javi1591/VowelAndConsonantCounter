@@ -1,54 +1,34 @@
-# ArraysAndVectors
+# Vowel and Consonant Counter (Chapter 10)
 
-A C++ console application project designed to demonstrate working with arrays and vectors. Built using Visual Studio (or your preferred C++ IDE), this assignment encompasses declaring and manipulating one-dimensional and two-dimensional arrays, performing operations on `std::vector`, and using loops and functions for data processing.
+A C++ console application that reads a sentence from the user and analyzes its contents to count vowels and consonants. The program features a simple text-based menu system that allows the user to perform multiple operations without restarting the program.
 
----
+## Overview
+- Prompts the user to enter a sentence of up to 100 characters.
+- Displays a menu with options to:
+  1. Count vowels.
+  2. Count consonants.
+  3. Count both vowels and consonants.
+  4. Enter a new sentence.
+  5. Exit the program.
+- Repeats the menu until the user selects the exit option.
 
-## Project Overview
+## Core Logic
+- `countVowel(const char* str)`  
+  Iterates through the string and counts all vowel characters (`A, E, I, O, U`) in both uppercase and lowercase.
+- `countConst(const char* str)`  
+  Counts all alphabetic characters that are not vowels using `isalpha()` for validation.
+- `displayMenu()`  
+  Prints the available options and prompts for user selection.
+- Processes user choice using a `switch` statement, handling both uppercase and lowercase inputs.
 
-This project covers the following core tasks:
+## Input Validation
+- Rejects invalid menu options and reprompts.
+- Uses `cin.getline()` for safe input handling up to the array’s capacity.
+- Handles character array input correctly by discarding newline characters from the input buffer when necessary.
 
-- Declaring and initializing one-dimensional arrays.
-- Declaring and initializing two-dimensional arrays.
-- Using `std::vector` to dynamically handle collections of data.
-- Generating random values to populate arrays and vectors.
-- Calculating totals, averages, minimums, and maximums using loops and function calls.
-- Displaying the data in formatted output for clarity.
-
----
-
-## Features
-
-- Prompt user for the size (or number of elements) for the one-dimensional vector or array.
-- Populate the data structure with random numbers (or user‐provided input) within a set range.
-- Compute and display:
-  - Total sum of elements.
-  - Average of elements.
-  - Minimum and maximum values.
-- For two-dimensional arrays:
-  - Populate a row-by-row structure.
-  - Calculate row totals, column totals, and overall totals.
-  - Display the structure in a table format.
-- Validate user input to avoid invalid array/vector sizes or out‐of‐range values.
-
----
-
-## Technologies Used
-
-- Language: C++ (compatible with C++11 or later)  
-- IDE: Visual Studio (2019/2022) or any environment supporting C++ development  
-- Version Control: Git & GitHub
-
----
-
-## Getting Started
-
-### Prerequisites
-
-You will need a system with a C++ compiler (Visual Studio preferred) and basic familiarity with C++ basics—arrays, loops, functions, vectors.
-
-### Clone Repository
-
-```bash
-git clone https://github.com/Javi1591/ArraysAndVectors.git
-cd ArraysAndVectors
+## Build & Run
+- Visual Studio (Windows): open the solution or create a Console App and add the source file, then **Build → Run**.
+- g++ (CLI):
+  ```bash
+  g++ -std=c++11 -O2 -o VowelConsonantCounter nazarioCPP210.cpp
+  ./VowelConsonantCounter
